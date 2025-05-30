@@ -17,7 +17,7 @@ export default function Preloader() {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black">
-      <div className="relative text-center space-y-6">
+      <div className="relative text-center space-y-6 w-full px-4 sm:px-0">
         {/* Spiral SVG */}
         <div
           id="spiral"
@@ -74,7 +74,7 @@ export default function Preloader() {
 
         {/* Orbiting Circles */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="orbit-container">
+          <div className="orbit-container scale-[0.6] sm:scale-100">
             {[...Array(8)].map((_, i) => (
               <div
                 key={i}
@@ -91,9 +91,9 @@ export default function Preloader() {
         <Image
           src="/logo-only3.png"
           alt="Loading Logo"
-          width={210}
-          height={120}
-          className="mx-auto z-10"
+          width={150}
+          height={80}
+          className="mx-auto z-10 sm:w-[210px] sm:h-[120px] w-[150px] h-[80px]"
           priority
         />
       </div>
