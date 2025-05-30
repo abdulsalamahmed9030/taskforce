@@ -8,31 +8,30 @@ export default function StatisticsSection() {
   const countRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-  const node = countRef.current; // Save current ref in a variable
+    const node = countRef.current; // Save current ref in a variable
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting && !hasAnimated) {
-        startCount();
-        setHasAnimated(true);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          startCount();
+          setHasAnimated(true);
+        }
+      },
+      {
+        threshold: 0.5,
       }
-    },
-    {
-      threshold: 0.5,
-    }
-  );
+    );
 
-  if (node) {
-    observer.observe(node);
-  }
-
-  return () => {
     if (node) {
-      observer.unobserve(node); // Use the saved node
+      observer.observe(node);
     }
-  };
-}, [hasAnimated]);
 
+    return () => {
+      if (node) {
+        observer.unobserve(node); // Use the saved node
+      }
+    };
+  }, [hasAnimated]);
 
   const startCount = () => {
     let start = 0;

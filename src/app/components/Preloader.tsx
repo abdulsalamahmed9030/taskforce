@@ -47,10 +47,19 @@ export default function Preloader() {
               const begin = `${frac * DURATION}s`;
 
               return (
-                <circle key={i} cx={x} cy={y} r={DOT_RADIUS} fill="#fff" opacity="0.6">
+                <circle
+                  key={i}
+                  cx={x}
+                  cy={y}
+                  r={DOT_RADIUS}
+                  fill="#fff"
+                  opacity="0.6"
+                >
                   <animate
                     attributeName="r"
-                    values={`${DOT_RADIUS * 0.5};${DOT_RADIUS * 1.5};${DOT_RADIUS * 0.5}`}
+                    values={`${DOT_RADIUS * 0.5};${DOT_RADIUS * 1.5};${
+                      DOT_RADIUS * 0.5
+                    }`}
                     dur={`${DURATION}s`}
                     begin={begin}
                     repeatCount="indefinite"

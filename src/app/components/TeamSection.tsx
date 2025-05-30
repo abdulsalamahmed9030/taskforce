@@ -32,10 +32,10 @@ export default function TeamSection() {
           OUR PROFESSIONALS
         </p>
         <h2 className="text-4xl md:text-5xl font-bold mt-2">
-  <span className="dark:text-black text-current">EXPERTS AND OUR</span> <br />
-  <span className="text-[#ffda08]">TEAM MEMBERS</span>
-</h2>
-
+          <span className="dark:text-black text-current">EXPERTS AND OUR</span>{" "}
+          <br />
+          <span className="text-[#ffda08]">TEAM MEMBERS</span>
+        </h2>
       </div>
 
       {/* Cards */}

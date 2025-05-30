@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+} from "react-icons/fa";
 
 const footerLinks = [
   { label: "Home", href: "/" },
@@ -28,42 +33,60 @@ export default function Footer() {
             priority
           />
           <p className="mt-4 text-lg leading-relaxed max-w-xs text-justify">
-            TASK FORCE INTERIOR (P) LTD. is an organization overseen by individuals with extensive experience in civil engineering, interior design, and the management of turnkey projects.
+            TASK FORCE INTERIOR (P) LTD. is an organization overseen by
+            individuals with extensive experience in civil engineering, interior
+            design, and the management of turnkey projects.
           </p>
         </div>
 
         {/* Column 2: Interior Design */}
         <div>
-  <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">INTERIOR DESIGN</h3>
-  <address className="not-italic text-lg leading-relaxed max-w-xs space-y-2">
-    <p>#3-5-823, Ground Floor,</p>
-    <p>Hyderabad Business Center,</p>
-    <p>Hyderguda, Hyderabad - 500029</p>
-    <p>
-      <strong>Phone:</strong>{" "}
-      <a href="tel:04023240629" className="hover:text-[#ffda08] transition-colors duration-200">
-        040-23240629
-      </a>{" "}
-      /{" "}
-      <a href="tel:04066669067" className="hover:text-[#ffda08] transition-colors duration-200">
-        040-66669067
-      </a>
-    </p>
-    <p>
-      <strong>Email:</strong>{" "}
-      <a href="mailto:info@taskforceinteriors.com" className="hover:text-[#ffda08] transition-colors duration-200">
-        info@taskforceinteriors.com
-      </a>
-    </p>
-  </address>
-</div>
+          <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">
+            INTERIOR DESIGN
+          </h3>
+          <address className="not-italic text-lg leading-relaxed max-w-xs space-y-2">
+            <p>#3-5-823, Ground Floor,</p>
+            <p>Hyderabad Business Center,</p>
+            <p>Hyderguda, Hyderabad - 500029</p>
+            <p>
+              <strong>Phone:</strong>{" "}
+              <a
+                href="tel:04023240629"
+                className="hover:text-[#ffda08] transition-colors duration-200"
+              >
+                040-23240629
+              </a>{" "}
+              /{" "}
+              <a
+                href="tel:04066669067"
+                className="hover:text-[#ffda08] transition-colors duration-200"
+              >
+                040-66669067
+              </a>
+            </p>
+            <p>
+              <strong>Email:</strong>{" "}
+              <a
+                href="mailto:info@taskforceinteriors.com"
+                className="hover:text-[#ffda08] transition-colors duration-200"
+              >
+                info@taskforceinteriors.com
+              </a>
+            </p>
+          </address>
+        </div>
         {/* Column 3: Links */}
         <div>
-          <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">LINKS</h3>
+          <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">
+            LINKS
+          </h3>
           <ul className="space-y-2 text-sm max-w-xs">
             {footerLinks.map(({ label, href }) => (
               <li key={label}>
-                <Link href={href} className="hover:text-[#ffda08] transition-colors duration-200">
+                <Link
+                  href={href}
+                  className="hover:text-[#ffda08] transition-colors duration-200"
+                >
                   {label}
                 </Link>
               </li>
@@ -73,18 +96,36 @@ export default function Footer() {
 
         {/* Column 4: Follow Us */}
         <div>
-          <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">FOLLOW US</h3>
+          <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">
+            FOLLOW US
+          </h3>
           <div className="flex flex-col space-y-4 text-white text-lg">
-            <a href="#" aria-label="Facebook" className="hover:text-[#ffda08] transition-colors duration-200">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="hover:text-[#ffda08] transition-colors duration-200"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" aria-label="Twitter" className="hover:text-[#ffda08] transition-colors duration-200">
+            <a
+              href="#"
+              aria-label="Twitter"
+              className="hover:text-[#ffda08] transition-colors duration-200"
+            >
               <FaTwitter />
             </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-[#ffda08] transition-colors duration-200">
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="hover:text-[#ffda08] transition-colors duration-200"
+            >
               <FaLinkedinIn />
             </a>
-            <a href="#" aria-label="Instagram" className="hover:text-[#ffda08] transition-colors duration-200">
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="hover:text-[#ffda08] transition-colors duration-200"
+            >
               <FaInstagram />
             </a>
           </div>

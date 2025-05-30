@@ -4,17 +4,13 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import Image from "next/image";
 import projects, { Project } from "../data/projects";
 
-
-
 export default function PortFolio() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // useMemo to avoid recomputing on every render
   const currentImages = useMemo(() => {
-    return (
-      projects.find((proj) => proj.name === selectedProject)?.images || []
-    );
+    return projects.find((proj) => proj.name === selectedProject)?.images || [];
   }, [selectedProject]);
 
   const closeLightbox = () => setLightboxIndex(null);
@@ -145,7 +141,7 @@ export default function PortFolio() {
               ›
             </button>
 
-            {/* Close Button */} 
+            {/* Close Button */}
             <button
               onClick={closeLightbox}
               className="absolute top-2 right-2 text-white text-5xl font-bold hover:text-yellow-400"

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { X } from "lucide-react";
@@ -32,49 +31,45 @@ export default function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
             className="mx-auto mb-2"
           />
           <p className="text-sm text-gray-300">
-            TASK FORCE INTERIOR (P) LTD. is managed by experienced
-            professionals in civil engineering, interior design, and turnkey
-            project execution.
+            TASK FORCE INTERIOR (P) LTD. is managed by experienced professionals
+            in civil engineering, interior design, and turnkey project
+            execution.
           </p>
         </div>
 
         <h2 className="text-xl font-bold mb-4">Get a free quote</h2>
 
-      <form className="space-y-3">
-  <input
-    type="text"
-    placeholder="Your Name *"
-    className="w-full p-2 rounded text-white bg-gray-800 placeholder-white"
-    required
-  />
-  <input
-    type="email"
-    placeholder="Your Email *"
-    className="w-full p-2 rounded text-white bg-gray-800 placeholder-white"
-    required
-  />
-  <input
-    type="tel"
-    placeholder="Phone Number"
-    className="w-full p-2 rounded text-white bg-gray-800 placeholder-white"
-  />
-  <textarea
-    placeholder="Your Message"
-    className="w-full p-2 rounded text-white bg-gray-800 placeholder-white"
-    rows={4}
-  />
-  <button
-    type="submit"
-    className="bg-[#ffda08] text-white font-bold w-full py-2 rounded"
-  >
-    Submit
-  </button>
-</form>
-
-
+        <form className="space-y-3">
+          <input
+            type="text"
+            placeholder="Your Name *"
+            className="w-full p-2 rounded text-white bg-gray-800 placeholder-white"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your Email *"
+            className="w-full p-2 rounded text-white bg-gray-800 placeholder-white"
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            className="w-full p-2 rounded text-white bg-gray-800 placeholder-white"
+          />
+          <textarea
+            placeholder="Your Message"
+            className="w-full p-2 rounded text-white bg-gray-800 placeholder-white"
+            rows={4}
+          />
+          <button
+            type="submit"
+            className="bg-[#ffda08] text-white font-bold w-full py-2 rounded"
+          >
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );
 }
-
-

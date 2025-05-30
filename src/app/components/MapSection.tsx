@@ -7,19 +7,18 @@ const MapSection = () => {
       <div className="max-w-screen-xl mx-auto">
         {/* Logo and CONTACT US */}
         <div className="flex items-center space-x-4 mb-4">
-  <div className="w-20 h-20 relative">
-    <Image
-      src="/favicon1.png"
-      alt="Logo"
-      fill
-      className="object-contain"
-    />
-  </div>
- <span className="text-[#ffda08] tracking-widest text-xl md:text-2xl lg:text-3xl">
-  CONTACT US
-</span>
-</div>
-
+          <div className="w-20 h-20 relative">
+            <Image
+              src="/favicon1.png"
+              alt="Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <span className="text-[#ffda08] tracking-widest text-xl md:text-2xl lg:text-3xl">
+            CONTACT US
+          </span>
+        </div>
 
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-extrabold mb-8">

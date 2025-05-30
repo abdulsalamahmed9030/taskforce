@@ -6,7 +6,6 @@ import HeroImage from "./HeroImage";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 
-
 const slides = [
   {
     id: 1,
@@ -48,39 +47,39 @@ export default function HeroSection() {
     <section className="relative w-full h-[90vh] bg-black text-white overflow-hidden">
       {/* Left: Social Media Icons */}
       <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col gap-4">
-  <Link
-    href="https://facebook.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center text-white hover:bg-[#ffda08] hover:text-black transition"
-  >
-    <Facebook size={20} />
-  </Link>
-  <Link
-    href="https://instagram.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center text-white hover:bg-[#ffda08] hover:text-black transition"
-  >
-    <Instagram size={20} />
-  </Link>
-  <Link
-    href="https://linkedin.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center text-white hover:bg-[#ffda08] hover:text-black transition"
-  >
-    <Linkedin size={20} />
-  </Link>
-  <Link
-    href="https://youtube.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center text-white hover:bg-[#ffda08] hover:text-black transition"
-  >
-    <Youtube size={20} />
-  </Link>
-</div>
+        <Link
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center text-white hover:bg-[#ffda08] hover:text-black transition"
+        >
+          <Facebook size={20} />
+        </Link>
+        <Link
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center text-white hover:bg-[#ffda08] hover:text-black transition"
+        >
+          <Instagram size={20} />
+        </Link>
+        <Link
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center text-white hover:bg-[#ffda08] hover:text-black transition"
+        >
+          <Linkedin size={20} />
+        </Link>
+        <Link
+          href="https://youtube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center text-white hover:bg-[#ffda08] hover:text-black transition"
+        >
+          <Youtube size={20} />
+        </Link>
+      </div>
 
       {/* Left: Text Content */}
       <div className="absolute inset-y-0 left-0 w-full md:w-1/2 px-4 sm:px-10 md:px-20 flex flex-col justify-center z-10">

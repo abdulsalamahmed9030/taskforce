@@ -83,7 +83,6 @@ export default function TaskForceSection() {
               width={800}
               height={500}
               className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[750px] object-cover rounded shadow-md transition-all duration-500"
-
             />
           </div>
         </div>

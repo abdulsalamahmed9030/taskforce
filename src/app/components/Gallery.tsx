@@ -1,19 +1,27 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState } from "react";
+import Image from "next/image";
 
 const products = [
-  { id: 1, name: 'CNC Processing Center CENTATEQ P-100', src: '/gallery/1.jpg' },
-  { id: 2, name: 'SAWTEQ-B-500 Beam Saw', src: '/gallery/2.jpg' },
-  { id: 3, name: 'EDGETEQ S-300 Edge Banding3', src: '/gallery/3.jpg' },
-  { id: 4, name: 'DRILLTEQ Drilling', src: '/gallery/4.jpg' },
-  { id: 5, name: 'CNC Laser Cutting Machine', src: '/gallery/5.jpg' },
-  { id: 6, name: 'Felder K700S Sliding Table Panel Saw Machine', src: '/gallery/6.jpg' },
-  { id: 7, name: 'Manual Edge Banding Machine', src: '/gallery/7.jpg' },
-  { id: 8, name: 'OptiDrill Three Head Boring', src: '/gallery/8.jpg' },
-  { id: 9, name: 'Post Forming machine-j5100', src: '/gallery/9.jpg' },
-  { id: 10, name: 'Four Sided Moulder', src: '/gallery/10.png' },
+  {
+    id: 1,
+    name: "CNC Processing Center CENTATEQ P-100",
+    src: "/gallery/1.jpg",
+  },
+  { id: 2, name: "SAWTEQ-B-500 Beam Saw", src: "/gallery/2.jpg" },
+  { id: 3, name: "EDGETEQ S-300 Edge Banding3", src: "/gallery/3.jpg" },
+  { id: 4, name: "DRILLTEQ Drilling", src: "/gallery/4.jpg" },
+  { id: 5, name: "CNC Laser Cutting Machine", src: "/gallery/5.jpg" },
+  {
+    id: 6,
+    name: "Felder K700S Sliding Table Panel Saw Machine",
+    src: "/gallery/6.jpg",
+  },
+  { id: 7, name: "Manual Edge Banding Machine", src: "/gallery/7.jpg" },
+  { id: 8, name: "OptiDrill Three Head Boring", src: "/gallery/8.jpg" },
+  { id: 9, name: "Post Forming machine-j5100", src: "/gallery/9.jpg" },
+  { id: 10, name: "Four Sided Moulder", src: "/gallery/10.png" },
 ];
 
 export default function Gallery() {
