@@ -5,6 +5,7 @@ import TeamSection from "../components/TeamSection";
 import Footer from "../components/Footer";
 import AboutTwo from "../components/about/AboutTwo";
 import TaskForceOverview from "../components/TaskForceOverview";
+import Copyright from "../components/Copyright";
 
 const page = () => {
   return (
@@ -17,8 +18,8 @@ const page = () => {
       <AboutTwo />
       <TaskForceSection />
       <TeamSection />
-
       <Footer />
+      <Copyright />
     </>
   );
 };

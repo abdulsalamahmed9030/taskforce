@@ -4,6 +4,7 @@ import TaskForceOverview from '../components/TaskForceOverview'
 import Footer from '../components/Footer'
 import AboutText from '../components/about/AboutText'
 import Gallery from '../components/Gallery'
+import Copyright from '../components/Copyright'
 
 const page = () => {
   return (
@@ -15,6 +16,7 @@ const page = () => {
       <AboutText />
       <Gallery />
       <Footer />
+      <Copyright />
     </>
   )
 }

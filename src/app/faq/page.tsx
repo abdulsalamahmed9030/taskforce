@@ -4,6 +4,7 @@ import TaskForceOverview from "../components/TaskForceOverview";
 
 import Footer from "../components/Footer";
 import Faq from "../components/Faq";
+import Copyright from "../components/Copyright";
 
 const Page = () => {
   return (
@@ -12,6 +13,7 @@ const Page = () => {
       <TaskForceOverview subheading="# Faqs" heading="Task Force Interiors" />
       <Faq />
       <Footer />
+      <Copyright />
     </>
   );
 };
