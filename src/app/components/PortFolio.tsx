@@ -106,7 +106,8 @@ export default function PortFolio() {
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
           onClick={closeLightbox}
         >
-          <div className="relative max-w-5xl w-full px-4 flex items-center justify-center">
+         <div className="relative max-w-5xl w-full px-4 flex items-center justify-center">
+
             {/* Prev Button */}
             <button
               onClick={(e) => {
@@ -143,12 +144,12 @@ export default function PortFolio() {
 
             {/* Close Button */}
             <button
-              onClick={closeLightbox}
-              className="absolute top-2 right-2 text-white text-5xl font-bold hover:text-yellow-400"
-              aria-label="Close"
-            >
-              ×
-            </button>
+  onClick={closeLightbox}
+  className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-white text-5xl font-bold hover:text-yellow-400 z-50"
+  aria-label="Close"
+>
+  ×
+</button>
           </div>
         </div>
       )}
