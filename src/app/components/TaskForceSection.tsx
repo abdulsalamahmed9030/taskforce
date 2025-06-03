@@ -37,42 +37,47 @@ export default function TaskForceSection() {
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Left content (STATIC) */}
           <div className="lg:w-1/2 space-y-6">
-            <h2 className="text-3xl font-bold ">
-              Task FORCE INTERIOR (P) LTD.
-            </h2>
-            <p className="text-xl mt-3 text-white leading-relaxed text-justify">
-              Task Force Interior (P) Ltd. is led by seasoned professionals with
-              extensive expertise in civil engineering and interior design,
-              prioritizing the efficient management of turnkey projects.
-            </p>
-            <h2 className="text-3xl font-bold text-[#ffda08]">
-              WORKING BACKGROUND
-            </h2>
-            <p className="text-xl mt-3 text-white leading-relaxed text-justify">
-              Our company boasts a strong history of delivering successful
-              projects, spanning upscale office and showroom interior
-              decoration, software centers, BPOs, and data centers. We excel in
-              crafting atriums and providing ACP and glass cladding for
-              multi-storey buildings in Hyderabad and other major cities. Our
-              clientele includes multinational corporations and corporate
-              entities, testament to their trust in our expertise. Furthermore,
-              our portfolio extends to completing interiors for over
-              thirty-eight hospitals across India, highlighting our versatility
-              and unwavering commitment to excellence across diverse sectors.
-            </p>
-            <h2 className="text-3xl font-bold ">NATURE OF WORK UNDERTAKEN</h2>
-            <p className="text-xl mt-3 text-white leading-relaxed text-justify">
-              Our specialization encompasses a comprehensive array of services,
-              spanning false ceiling installation, flooring solutions, cladding,
-              furnishing, carpentry, electrical work, painting, polishing, and
-              partitioning utilizing diverse materials. Additionally, we excel
-              in manufacturing MS furniture, casting, railings, and bespoke
-              designer items tailored to our clients&apos; specifications.
-              Furthermore, our capabilities extend to the construction of
-              skylight atriums for exterior spaces and domes to enhance building
-              connectivity.
-            </p>
-          </div>
+  <h2 className="font-oswald text-3xl font-bold text-white uppercase leading-normal">
+    Task FORCE INTERIOR (P) LTD.
+  </h2>
+  <p className="text-xl mt-3 text-white leading-relaxed text-justify">
+    Task Force Interior (P) Ltd. is led by seasoned professionals with
+    extensive expertise in civil engineering and interior design,
+    prioritizing the efficient management of turnkey projects.
+  </p>
+
+  <h2 className="font-oswald text-3xl font-bold text-[#ffda08] uppercase leading-normal">
+    WORKING BACKGROUND
+  </h2>
+  <p className="text-xl mt-3 text-white leading-relaxed text-justify">
+    Our company boasts a strong history of delivering successful
+    projects, spanning upscale office and showroom interior
+    decoration, software centers, BPOs, and data centers. We excel in
+    crafting atriums and providing ACP and glass cladding for
+    multi-storey buildings in Hyderabad and other major cities. Our
+    clientele includes multinational corporations and corporate
+    entities, testament to their trust in our expertise. Furthermore,
+    our portfolio extends to completing interiors for over
+    thirty-eight hospitals across India, highlighting our versatility
+    and unwavering commitment to excellence across diverse sectors.
+  </p>
+
+  <h2 className="font-oswald text-3xl font-bold text-white uppercase leading-normal">
+    NATURE OF WORK UNDERTAKEN
+  </h2>
+  <p className="text-xl mt-3 text-white leading-relaxed text-justify">
+    Our specialization encompasses a comprehensive array of services,
+    spanning false ceiling installation, flooring solutions, cladding,
+    furnishing, carpentry, electrical work, painting, polishing, and
+    partitioning utilizing diverse materials. Additionally, we excel
+    in manufacturing MS furniture, casting, railings, and bespoke
+    designer items tailored to our clients&apos; specifications.
+    Furthermore, our capabilities extend to the construction of
+    skylight atriums for exterior spaces and domes to enhance building
+    connectivity.
+  </p>
+</div>
+
 
           {/* Right image (DYNAMIC) */}
           <div className="lg:w-1/2">

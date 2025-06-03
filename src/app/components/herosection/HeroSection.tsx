@@ -13,21 +13,21 @@ const slides = [
     subtitle: "TASK FORCE INTERIORS",
     description:
       "is an organization overseen by individuals with extensive experience in civil engineering, interior design, and the management of turnkey projects.",
-    image: "/slide-1.png",
+    image: "/banner-4.png",
   },
   {
     id: 2,
     title: "THE STYLE OF",
     subtitle: "MODERN ARCHITECTURE",
     description: "Blending elegance and functionality for future-ready spaces.",
-    image: "/slide-1.png",
+    image: "/banner-4.png",
   },
   {
     id: 3,
     title: "THE POWER OF",
     subtitle: "BOLD DESIGN",
     description: "Turning visions into structures with creative excellence.",
-    image: "/slide-1.png",
+    image: "/banner-4.png",
   },
 ];
 

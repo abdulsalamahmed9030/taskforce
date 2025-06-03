@@ -8,12 +8,12 @@ const AboutTwo = () => {
       {/* LEFT SECTION */}
       <div className="md:w-1/3 w-full text-center md:text-left">
         <p className="text-yellow-600 tracking-widest text-sm uppercase">Welcome To</p>
-        <h2 className="text-5xl font-black leading-tight mt-2">
-          Creative<br />
-          Solutions by<br />
-          Professional<br />
-          Designers
-        </h2>
+       <h2 className="font-oswald text-[80px] leading-[90px] font-black mt-2">
+  Creative<br />
+  Solutions by<br />
+  Professional<br />
+  Designers
+</h2>
       </div>
 
       {/* MIDDLE SECTION - IMAGE */}

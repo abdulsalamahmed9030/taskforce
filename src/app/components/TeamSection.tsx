@@ -31,11 +31,12 @@ export default function TeamSection() {
         <p className="text-[#ffda08] font-bold tracking-widest">
           OUR PROFESSIONALS
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold mt-2">
-          <span className="dark:text-black text-current">EXPERTS AND OUR</span>{" "}
-          <br />
-          <span className="text-[#ffda08]">TEAM MEMBERS</span>
-        </h2>
+        <h2 className="font-oswald text-[40px] md:text-[60px] font-semibold leading-[70px] uppercase mt-2 text-gray-900 dark:text-black">
+  <span>EXPERTS AND OUR</span>
+  <br />
+  <span className="text-[#ffda08]">TEAM MEMBERS</span>
+</h2>
+
       </div>
 
       {/* Cards */}
@@ -71,12 +72,12 @@ export default function TeamSection() {
                     {member.title}
                   </p>
                   <h3
-                    className={`text-xl font-bold ${
-                      isHovered ? "text-white" : "text-black"
-                    }`}
-                  >
-                    {member.name}
-                  </h3>
+  className={`font-oswald text-[24px] font-normal leading-[34px] ${
+    isHovered ? "text-white" : "text-black"
+  }`}
+>
+  {member.name}
+</h3>
                 </div>
               </div>
 

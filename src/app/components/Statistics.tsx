@@ -56,10 +56,10 @@ export default function StatisticsSection() {
           <h6 className="text-[#ffda08] text-xl uppercase tracking-widest font-semibold mb-2">
             Statistics
           </h6>
-          <h2 className="font-oswald text-3xl md:text-6xl font-extrabold text-gray-900">
-            Well-established and{" "}
-            <span className="text-[#ffda08]">Experienced</span>
-          </h2>
+          <h2 className="font-oswald text-3xl md:text-[60px] font-semibold leading-[70px] uppercase text-gray-900">
+  Well-established and{" "}
+  <span className="text-[#ffda08]">Experienced</span>
+</h2>
         </div>
 
         <div className="w-full">

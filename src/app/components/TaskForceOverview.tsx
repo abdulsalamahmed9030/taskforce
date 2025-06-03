@@ -35,9 +35,11 @@ export default function TaskForceOverview({
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="lg:w-full space-y-6">
             <h2 className="text-2xl font-bold text-[#ffda08]">{subheading}</h2>
-            <h1 className="text-5xl lg:text-6xl font-extrabold text-white">
-              {heading}
-            </h1>
+           <h1 className="font-oswald text-[60px] leading-[70px] font-semibold uppercase text-white">
+  {heading}
+</h1>
+
+
           </div>
         </div>
       </div>
