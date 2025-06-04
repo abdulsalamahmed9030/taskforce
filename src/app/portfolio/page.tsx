@@ -10,7 +10,7 @@ const page = () => {
     <>
       <Header />
       <TaskForceOverview
-              subheading="# gallery"
+              subheading="Gallery"
               heading="Task Force Interiors"
             />
             

@@ -10,7 +10,7 @@ const Page = () => {
   return (
     <>
       <Header />
-      <TaskForceOverview subheading="# Faqs" heading="Task Force Interiors" />
+      <TaskForceOverview subheading="Faqs" heading="Task Force Interiors" />
       <Faq />
       <Footer />
       <Copyright />

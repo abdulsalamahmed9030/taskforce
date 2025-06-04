@@ -9,7 +9,7 @@ const page = () => {
   return (
     <>
       <Header />
-       <TaskForceOverview subheading="# CSR" heading="Task Force Interiors" />
+       <TaskForceOverview subheading="Csr" heading="Task Force Interiors" />
        <Csr />
        <Footer />
        <Copyright />
