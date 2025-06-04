@@ -8,7 +8,6 @@ export default function PortFolio() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  // useMemo to avoid recomputing on every render
   const currentImages = useMemo(() => {
     return projects.find((proj) => proj.name === selectedProject)?.images || [];
   }, [selectedProject]);
@@ -27,14 +26,12 @@ export default function PortFolio() {
     setLightboxIndex((lightboxIndex + 1) % currentImages.length);
   }, [lightboxIndex, currentImages]);
 
-  // Set first project on load
   useEffect(() => {
     if (projects.length > 0 && !selectedProject) {
       setSelectedProject(projects[0].name);
     }
   }, [selectedProject]);
 
-  // Keyboard controls
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (lightboxIndex === null) return;
@@ -106,6 +103,18 @@ export default function PortFolio() {
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
           onClick={closeLightbox}
         >
+          {/* Close Button in Top-Right */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              closeLightbox();
+            }}
+            className="absolute top-4 right-4 text-white text-5xl font-bold hover:text-yellow-400 z-50"
+            aria-label="Close"
+          >
+            ×
+          </button>
+
           <div className="relative max-w-5xl w-full px-4 flex items-center justify-center">
             {/* Prev Button */}
             <button
@@ -139,15 +148,6 @@ export default function PortFolio() {
               aria-label="Next Image"
             >
               ›
-            </button>
-
-            {/* Close Button */}
-            <button
-              onClick={closeLightbox}
-              className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-white text-5xl font-bold hover:text-yellow-400 z-50"
-              aria-label="Close"
-            >
-              ×
             </button>
           </div>
         </div>
