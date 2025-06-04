@@ -46,11 +46,11 @@ export default function AboutUs() {
 
         {/* Text Content */}
         <div className="space-y-6">
-          <div className="text-[#ffda08] font-semibold flex items-center gap-2">
+          <div className="text-[#ffda08] font-semibold flex items-center gap-2 font-oswald">
             <span className="text-xl tracking-wider">ABOUT US</span>
           </div>
 
-          <h2 className="text-6xl font-extrabold leading-tight text-white">
+          <h2 className="text-6xl font-extrabold leading-tight text-white font-oswald">
             TASK FORCE INTERIORS <br />
             <span className="text-white text-stroke-white">DESIGN SERVICE</span>
           </h2>
@@ -66,7 +66,7 @@ export default function AboutUs() {
             maximize functionality, flow, and utilization of the area.
           </p>
 
-          <div className="grid grid-cols-2 gap-4 text-lg font-semibold text-[#ffda08]">
+          <div className="grid grid-cols-2 gap-4 text-lg font-semibold text-[#ffda08] font-oswald">
             <div className="flex items-center gap-2">
               <span className="text-[#ffda08]">✔</span> Interior Design
             </div>

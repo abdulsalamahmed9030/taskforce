@@ -24,17 +24,18 @@ export default function HeroText({
       <motion.div
         key={id}
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }} 
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-screen"
+        className="w-screen lg:ml-52 lg:mb-60"
       >
-        <p className="text-[#ffda08] uppercase tracking-widest mb-2 text-2xl font-semibold">
+        <p className="text-[#ffda08] uppercase tracking-widest mb-2 text-2xl font-semibold font-oswald">
           Welcome To
         </p>
-        <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-2">
+        <h1 className="text-5xl lg:text-[80px] font-bold leading-tight mb-2 font-oswald">
           {title}
         </h1>
-        <h2 className="text-5xl lg:text-7xl font-extrabold mb-4 text-stroke-white leading-tight"> 
+
+        <h2 className="text-5xl lg:text-[80px] font-extrabold mb-4 text-stroke-white leading-tight font-oswald">
           {id === 1 ? (
             <>
               TASK FORCE
@@ -46,12 +47,10 @@ export default function HeroText({
           )}
         </h2>
 
-        {/* ✅ Added dynamic padding class here */}
-        <p
-          className={`text-justify text-gray-300 mb-6 max-w-full sm:max-w-md text-sm sm:text-base px-[2px] ${descriptionClassName}`}
-        >
-          {description}
-        </p>
+       <p className={`text-gray-300 mb-6 max-w-full sm:max-w-md text-base sm:text-lg px-[2px] ${descriptionClassName}`}>
+  {description}
+</p>
+
 
         <a href="#" className="underline text-sm tracking-wider font-semibold">
           View More

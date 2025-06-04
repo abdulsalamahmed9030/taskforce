@@ -39,70 +39,71 @@ export default function DesktopNav() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="hidden md:flex space-x-6 font-bold text-sm tracking-wider relative z-[10000] font-oswald">
-      {navItems.map((item, i) =>
-        item.dropdown ? (
-          <div
-            key={i}
-            className="relative"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
+    <div className="hidden md:flex justify-center w-full relative z-[10000]">
+      <nav className="flex space-x-6 font-bold text-l tracking-wider font-oswald">
+        {navItems.map((item, i) =>
+          item.dropdown ? (
+            <div
+              key={i}
+              className="relative"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <Link
+                href={item.href}
+                className={cn(
+                  "transition-colors duration-200 hover:text-[#ffda08] cursor-pointer flex items-center space-x-1",
+                  item.label === "Home" && "text-[#ffda08]"
+                )}
+              >
+                <span>{formatLabel(item.label)}</span>
+                <svg
+                  className={cn(
+                    "w-3 h-3 transition-transform duration-200",
+                    dropdownOpen ? "rotate-180 text-[#ffda08]" : "text-current"
+                  )}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+
+              {dropdownOpen && (
+                <div
+                  className="absolute left-0 top-full mt-0 w-40 bg-white shadow-lg rounded-md py-2 z-[9999]"
+                  onMouseEnter={() => setDropdownOpen(true)}
+                  onMouseLeave={() => setDropdownOpen(false)}
+                >
+                  {item.dropdown.map((dropItem, j) => (
+                    <Link
+                      key={j}
+                      href={dropItem.href}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-300 hover:text-black font-oswald"
+                    >
+                      {formatLabel(dropItem.label)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
             <Link
+              key={i}
               href={item.href}
               className={cn(
-                "transition-colors duration-200 hover:text-[#ffda08] cursor-pointer flex items-center space-x-1",
-                item.label === "Home" && "text-[#ffda08]"
+                "transition-colors duration-200 hover:text-[#ffda08]",
+                item.label === "Home" && "text-[#ffda08]",
+                "font-oswald"
               )}
             >
-              <span>{formatLabel(item.label)}</span>
-              <svg
-                className={cn(
-                  "w-3 h-3 transition-transform duration-200",
-                  dropdownOpen ? "rotate-180 text-[#ffda08]" : "text-current"
-                )}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
+              {formatLabel(item.label)}
             </Link>
-
-            {/* Dropdown menu */}
-            {dropdownOpen && (
-              <div
-                className="absolute left-0 top-full mt-0 w-40 bg-white shadow-lg rounded-md py-2 z-[9999]"
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
-              >
-                {item.dropdown.map((dropItem, j) => (
-                  <Link
-                    key={j}
-                    href={dropItem.href}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-300 hover:text-black font-oswald"
-                  >
-                    {formatLabel(dropItem.label)}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-        ) : (
-          <Link
-            key={i}
-            href={item.href}
-            className={cn(
-              "transition-colors duration-200 hover:text-[#ffda08]",
-              item.label === "Home" && "text-[#ffda08]",
-              "font-oswald"
-            )}
-          >
-            {formatLabel(item.label)}
-          </Link>
-        )
-      )}
-    </nav>
+          )
+        )}
+      </nav>
+    </div>
   );
 }

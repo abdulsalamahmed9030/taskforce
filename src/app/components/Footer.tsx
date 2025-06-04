@@ -42,8 +42,8 @@ export default function Footer() {
             INTERIOR DESIGN
           </h3>
           <address className="not-italic text-lg leading-relaxed max-w-xs ">
-            <p>#3-5-823, Ground Floor,</p>
-            <p>Hyderabad Business Center,</p>
+            <p>3-5-823, Ground Floor</p>
+            <p>Hyderabad Business Center</p>
             <p>Hyderguda, Hyderabad - 500029</p>
             <p>
               <strong>Phone:</strong>{" "}
@@ -113,14 +113,14 @@ export default function Footer() {
               <FaXTwitter />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/task-force-interiors/"
               aria-label="LinkedIn"
               className="hover:text-[#ffda08] transition-colors duration-200"
             >
               <FaLinkedinIn />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/taskforceinteriors17/?hl=en"
               aria-label="Instagram"
               className="hover:text-[#ffda08] transition-colors duration-200"
             >
