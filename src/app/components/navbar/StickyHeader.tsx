@@ -21,6 +21,18 @@ const navItems = [
   },
 ];
 
+// ✅ Format label: Capitalize each word, except preserve FAQ/CSR
+function formatLabel(label: string) {
+  const preserve = ["FAQ", "CSR"];
+  if (preserve.includes(label.toUpperCase())) return label.toUpperCase();
+
+  return label
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
 export default function StickyHeader() {
   const [show, setShow] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -48,9 +60,9 @@ export default function StickyHeader() {
 
   return (
     <div
-      className={`bg-black text-white shadow-lg z-[9999] w-full transition-transform duration-300
-        fixed top-0 left-0
-        ${show ? "translate-y-0" : "-translate-y-full"}`}
+      className={`bg-black text-white shadow-lg z-[9999] w-full transition-transform duration-300 fixed top-0 left-0 ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-6">
         {/* Logo */}
@@ -58,7 +70,7 @@ export default function StickyHeader() {
           <Image src="/logo.png" alt="Logo" width={200} height={120} priority />
         </Link>
 
-        {/* Desktop Navigation with Oswald font */}
+        {/* Desktop Navigation */}
         <nav className="flex space-x-6 text-sm font-bold tracking-wide relative z-[10000] font-oswald">
           {navItems.map((item, index) =>
             item.dropdown ? (
@@ -69,7 +81,7 @@ export default function StickyHeader() {
                 onMouseLeave={() => setDropdownOpen(false)}
               >
                 <span className="cursor-pointer hover:text-[#ffda08] flex items-center space-x-1">
-                  <span>{item.label.toUpperCase()}</span>
+                  <span>{formatLabel(item.label)}</span>
                   <svg
                     className={`w-3 h-3 transition-transform duration-200 ${
                       dropdownOpen ? "rotate-180 text-[#ffda08]" : "text-current"
@@ -92,7 +104,7 @@ export default function StickyHeader() {
                         href={dropItem.href}
                         className="block px-4 py-2 text-sm hover:bg-yellow-300 hover:text-black font-oswald"
                       >
-                        {dropItem.label}
+                        {formatLabel(dropItem.label)}
                       </Link>
                     ))}
                   </div>
@@ -104,7 +116,7 @@ export default function StickyHeader() {
                 href={item.href}
                 className="hover:text-[#ffda08] transition-colors duration-200 font-oswald"
               >
-                {item.label.toUpperCase()}
+                {formatLabel(item.label)}
               </Link>
             )
           )}

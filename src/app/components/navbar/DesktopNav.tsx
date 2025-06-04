@@ -23,6 +23,18 @@ function cn(...classes: (string | undefined | false | null)[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+// ✅ Formatting function
+function formatLabel(label: string) {
+  const preserveUpper = ["FAQ", "CSR"];
+  if (preserveUpper.includes(label.toUpperCase())) return label.toUpperCase();
+
+  return label
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
 export default function DesktopNav() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -43,7 +55,7 @@ export default function DesktopNav() {
                 item.label === "Home" && "text-[#ffda08]"
               )}
             >
-              <span>{item.label.toUpperCase()}</span>
+              <span>{formatLabel(item.label)}</span>
               <svg
                 className={cn(
                   "w-3 h-3 transition-transform duration-200",
@@ -62,8 +74,8 @@ export default function DesktopNav() {
             {dropdownOpen && (
               <div
                 className="absolute left-0 top-full mt-0 w-40 bg-white shadow-lg rounded-md py-2 z-[9999]"
-                onMouseEnter={() => setDropdownOpen(true)} // KEEP OPEN on hover
-                onMouseLeave={() => setDropdownOpen(false)} // CLOSE on leave
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
               >
                 {item.dropdown.map((dropItem, j) => (
                   <Link
@@ -71,7 +83,7 @@ export default function DesktopNav() {
                     href={dropItem.href}
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-300 hover:text-black font-oswald"
                   >
-                    {dropItem.label}
+                    {formatLabel(dropItem.label)}
                   </Link>
                 ))}
               </div>
@@ -87,7 +99,7 @@ export default function DesktopNav() {
               "font-oswald"
             )}
           >
-            {item.label.toUpperCase()}
+            {formatLabel(item.label)}
           </Link>
         )
       )}

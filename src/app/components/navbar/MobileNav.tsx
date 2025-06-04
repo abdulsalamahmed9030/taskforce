@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image"; // ✅ Import Next.js Image
+import Image from "next/image";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -18,6 +18,18 @@ const navItems = [
 
 function cn(...classes: (string | undefined | false | null)[]) {
   return classes.filter(Boolean).join(" ");
+}
+
+// ✅ Capitalize first letter of each word except for special cases
+function formatLabel(label: string) {
+  const upperCasePreserve = ["FAQ", "CSR"];
+  if (upperCasePreserve.includes(label.toUpperCase())) return label.toUpperCase();
+
+  return label
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 export default function MobileNav() {
@@ -55,7 +67,7 @@ export default function MobileNav() {
         {/* Logo at the top */}
         <div className="mb-4">
           <Image
-            src="/logo.png" // ✅ Replace with your actual logo path
+            src="/logo.png"
             alt="Taskforce Interiors Logo"
             width={160}
             height={40}
@@ -75,7 +87,7 @@ export default function MobileNav() {
                 item.label === "Home" && "text-[#ffda08]"
               )}
             >
-              {item.label}
+              {formatLabel(item.label)}
             </Link>
           ))}
         </div>
@@ -87,7 +99,6 @@ export default function MobileNav() {
           <p>Business Center Hyderguda Hyderabad - 500029</p>
           <p>Phone: 040-23240629 / 040-66669067</p>
           <p>Email: info@taskforceinteriors.com</p>
-         
         </div>
       </div>
     </>
