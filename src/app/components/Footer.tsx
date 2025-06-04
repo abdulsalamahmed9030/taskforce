@@ -18,7 +18,8 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-10 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-16">
+
         {/* Column 1: Logo + Description */}
         <div>
           <Image
@@ -37,10 +38,10 @@ export default function Footer() {
 
         {/* Column 2: Interior Design */}
         <div>
-          <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">
+          <h3 className="font-bold uppercase tracking-wide text-xl">
             INTERIOR DESIGN
           </h3>
-          <address className="not-italic text-lg leading-relaxed max-w-xs space-y-2">
+          <address className="not-italic text-lg leading-relaxed max-w-xs ">
             <p>#3-5-823, Ground Floor,</p>
             <p>Hyderabad Business Center,</p>
             <p>Hyderguda, Hyderabad - 500029</p>
