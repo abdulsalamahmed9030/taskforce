@@ -32,7 +32,7 @@ export default function Footer() {
             height={140}
             priority
           />
-          <p className="mt-4 text-lg leading-relaxed max-w-xs text-justify">
+          <p className="mt-4 text-lg leading-relaxed max-w-xs">
             TASK FORCE INTERIOR (P) LTD. is an organization overseen by
             individuals with extensive experience in civil engineering, interior
             design, and the management of turnkey projects.

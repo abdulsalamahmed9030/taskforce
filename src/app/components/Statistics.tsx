@@ -74,7 +74,7 @@ export default function StatisticsSection() {
             <h3 className="text-xl md:text-4xl font-bold text-gray-900 mt-4 mb-2">
               Task Force Interiors
             </h3>
-            <p className="text-gray-700 max-w-full text-xl text-justify">
+            <p className="text-gray-700 max-w-full text-xl">
               We possess a distinguished history of accomplishing diverse
               projects, ranging from the interior design of premium offices and
               showrooms to software hubs, BPOs, and data centers. With over 75
