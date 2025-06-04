@@ -1,11 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const footerLinks = [
   { label: "Home", href: "/" },
@@ -95,11 +91,12 @@ export default function Footer() {
         </div>
 
         {/* Column 4: Follow Us */}
+        {/* Column 4: Follow Us */}
         <div>
           <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">
             FOLLOW US
           </h3>
-          <div className="flex flex-col space-y-4 text-white text-lg">
+          <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 text-white text-lg">
             <a
               href="#"
               aria-label="Facebook"
@@ -109,10 +106,10 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              aria-label="Twitter"
+              aria-label="Twitter/X"
               className="hover:text-[#ffda08] transition-colors duration-200"
             >
-              <FaTwitter />
+              <FaXTwitter />
             </a>
             <a
               href="#"
