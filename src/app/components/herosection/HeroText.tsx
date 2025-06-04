@@ -47,14 +47,11 @@ export default function HeroText({
           )}
         </h2>
 
-       <p className={`text-gray-300 mb-6 max-w-full sm:max-w-md text-base sm:text-lg px-[2px] ${descriptionClassName}`}>
-  {description}
-</p>
-
-
-        <a href="#" className="underline text-sm tracking-wider font-semibold">
-          View More
-        </a>
+        <p
+          className={`text-gray-300 mb-6 max-w-full sm:max-w-md text-base sm:text-lg px-[2px] ${descriptionClassName}`}
+        >
+          {description}
+        </p>
       </motion.div>
     </div>
   );
