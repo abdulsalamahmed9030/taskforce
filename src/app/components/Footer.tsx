@@ -30,7 +30,7 @@ export default function Footer() {
             priority
           />
           <p className="mt-4 text-lg leading-relaxed max-w-xs">
-            TASK FORCE INTERIOR (P) LTD. is an organization overseen by
+            TASK FORCE INTERIOR (P) LTD. is an organization overseen by 
             individuals with extensive experience in civil engineering, interior
             design, and the management of turnkey projects.
           </p>
