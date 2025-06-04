@@ -6,7 +6,7 @@ const AboutTwo = () => {
     <section className="flex flex-col md:flex-row items-start md:justify-start justify-between p-8 gap-8 relative bg-white text-black">
       {/* LEFT SECTION */}
       <div className="md:w-1/3 w-full text-center md:text-left">
-        <p className="text-yellow-600 tracking-widest text-sm md:text-lg uppercase">
+        <p className="text-[#ffda08] tracking-widest text-sm font-bold md:text-lg uppercase">
           Welcome To
         </p>
         <h2 className="font-oswald text-4xl leading-tight md:text-[80px] md:leading-[90px] font-black mt-2">
@@ -49,7 +49,7 @@ const AboutTwo = () => {
               href="#"
               className="text-lg underline text-black hover:text-gray-600"
             >
-              Download our brochure
+              Download our brochure 
             </a>
           </li>
           <li>

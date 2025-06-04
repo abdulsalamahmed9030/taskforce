@@ -64,14 +64,14 @@ export default function StickyHeader() {
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-6">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
         {/* Logo */}
         <Link href="/">
-          <Image src="/logo.png" alt="Logo" width={200} height={120} priority />
+          <Image src="/logo.png" alt="Logo" width={250} height={150} priority />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="flex space-x-6 text-sm font-bold tracking-wide relative z-[10000] font-oswald">
+        <nav className="flex space-x-6 text-xl font-bold tracking-wide relative z-[10000] font-oswald">
           {navItems.map((item, index) =>
             item.dropdown ? (
               <div
