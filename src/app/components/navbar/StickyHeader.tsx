@@ -58,8 +58,8 @@ export default function StickyHeader() {
           <Image src="/logo.png" alt="Logo" width={200} height={120} priority />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="flex space-x-6 text-sm font-bold tracking-wide relative z-[10000]">
+        {/* Desktop Navigation with Oswald font */}
+        <nav className="flex space-x-6 text-sm font-bold tracking-wide relative z-[10000] font-oswald">
           {navItems.map((item, index) =>
             item.dropdown ? (
               <div
@@ -86,12 +86,11 @@ export default function StickyHeader() {
                 {/* Dropdown Items */}
                 {dropdownOpen && (
                   <div className="absolute left-0 top-full w-40 bg-white text-black shadow-md rounded-md py-2 z-[9999]">
-
                     {item.dropdown.map((dropItem, dropIndex) => (
                       <Link
                         key={dropIndex}
                         href={dropItem.href}
-                        className="block px-4 py-2 text-sm hover:bg-yellow-300 hover:text-black"
+                        className="block px-4 py-2 text-sm hover:bg-yellow-300 hover:text-black font-oswald"
                       >
                         {dropItem.label}
                       </Link>
@@ -103,7 +102,7 @@ export default function StickyHeader() {
               <Link
                 key={index}
                 href={item.href}
-                className="hover:text-[#ffda08] transition-colors duration-200"
+                className="hover:text-[#ffda08] transition-colors duration-200 font-oswald"
               >
                 {item.label.toUpperCase()}
               </Link>

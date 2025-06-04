@@ -23,31 +23,32 @@ const services = [
 
 export default function RangeOfServices() {
   return (
-    <div className="bg-[#f9f4f1] py-10 text-left px-2 md:px-28">
-      <div className="text-xl tracking-widest text-[#ffda08] uppercase">
-        Our Services
-      </div>
-      <h2 className="text-3xl sm:text-5xl font-bold">
-        <span className="text-[#ffda08]">Range of </span>
-        <span className="dark:text-black text-current">SERVICES</span>
-      </h2>
+   <div className="bg-[#f9f4f1] py-10 text-left px-2 md:px-28">
+  <div className="font-oswald text-xl tracking-widest text-[#ffda08] uppercase">
+    Our Services
+  </div>
+  <h2 className="font-oswald text-3xl sm:text-5xl font-semibold uppercase leading-[70px] mt-2">
+    <span className="text-[#ffda08]">Range of </span>
+    <span className="dark:text-black text-current">SERVICES</span>
+  </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-10 px-4 mt-10">
-        {services.map((service, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
-            <Image
-              src={`/services/${service.img}`}
-              alt={service.name}
-              width={80}
-              height={80}
-              className="mx-auto"
-            />
-            <p className="mt-2 text-l font-semibold text-black">
-              {service.name}
-            </p>
-          </div>
-        ))}
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-10 px-4 mt-10">
+    {services.map((service, index) => (
+      <div key={index} className="flex flex-col items-center text-center">
+        <Image
+          src={`/services/${service.img}`}
+          alt={service.name}
+          width={80}
+          height={80}
+          className="mx-auto"
+        />
+        <p className="mt-2 font-oswald text-lg font-semibold text-black">
+          {service.name}
+        </p>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
+
   );
 }

@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -28,7 +27,7 @@ export default function DesktopNav() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="hidden md:flex space-x-6 font-bold text-sm tracking-wider relative z-[10000]">
+    <nav className="hidden md:flex space-x-6 font-bold text-sm tracking-wider relative z-[10000] font-oswald">
       {navItems.map((item, i) =>
         item.dropdown ? (
           <div
@@ -70,7 +69,7 @@ export default function DesktopNav() {
                   <Link
                     key={j}
                     href={dropItem.href}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-300 hover:text-black"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-300 hover:text-black font-oswald"
                   >
                     {dropItem.label}
                   </Link>
@@ -84,7 +83,8 @@ export default function DesktopNav() {
             href={item.href}
             className={cn(
               "transition-colors duration-200 hover:text-[#ffda08]",
-              item.label === "Home" && "text-[#ffda08]"
+              item.label === "Home" && "text-[#ffda08]",
+              "font-oswald"
             )}
           >
             {item.label.toUpperCase()}

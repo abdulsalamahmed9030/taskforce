@@ -15,15 +15,16 @@ const MapSection = () => {
               className="object-contain"
             />
           </div>
-          <span className="font-oswald uppercase font-semibold leading-[70px] text-[#ffda08] tracking-widest text-xl md:text-2xl lg:text-3xl">
-  CONTACT US
-</span>
+          <span className="text-[#ffda08] tracking-widest text-xl md:text-2xl lg:text-3xl">
+            CONTACT US
+          </span>
         </div>
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-8">
-          TALK WITH US
-        </h2>
+       <h2 className="font-oswald uppercase font-semibold leading-[70px] mb-8 text-white text-4xl md:text-5xl">
+  TALK WITH US
+</h2>
+
 
         {/* Google Map */}
         <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded overflow-hidden">
