@@ -3,6 +3,8 @@
 import { X } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 interface QuotePopupProps {
   isOpen: boolean;
@@ -26,7 +28,7 @@ export default function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
             aria-label="Close popup by clicking outside"
           />
 
-          {/* Sidebar Panel - 25% on large screens */}
+          {/* Sidebar Panel */}
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
@@ -48,18 +50,21 @@ export default function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
               <Image
                 src="/logo.png"
                 alt="Logo"
-                width={128}
-                height={42}
-                className="mx-auto mb-2"
+                width={228}
+                height={142}
+                className="mx-auto mb-20"
               />
-              <p className="text-sm text-gray-300">
-                TASK FORCE INTERIOR (P) LTD. is managed by experienced professionals in
-                civil engineering, interior design, and turnkey project execution.
+              <p className="text-xl text-gray-300">
+                TASK FORCE INTERIOR (P) LTD. is managed by experienced
+                professionals in civil engineering, interior design, and turnkey
+                project execution.
               </p>
             </div>
 
             {/* Form */}
-            <h2 className="text-xl font-bold mb-4 text-center">Get a Free Quote</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center font-oswald">
+              Get a Free Quote
+            </h2>
             <form className="space-y-4">
               <input
                 type="text"
@@ -85,11 +90,45 @@ export default function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
               />
               <button
                 type="submit"
-                className="bg-[#ffda08] text-black font-bold w-full py-3 rounded"
+                className="bg-[#ffda08] text-white font-bold w-full py-3 rounded text-xl"
               >
-                Submit
+                Send Message
               </button>
             </form>
+
+            {/* Social Icons under Submit */}
+            <div className="mt-8 w-full px-16">
+              <div className="flex flex-row justify-between text-white text-2xl">
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="hover:text-[#ffda08] transition-colors duration-200"
+                >
+                  <FaFacebookF />
+                </a>
+                <a
+                  href="#"
+                  aria-label="Twitter/X"
+                  className="hover:text-[#ffda08] transition-colors duration-200"
+                >
+                  <FaXTwitter />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/task-force-interiors/"
+                  aria-label="LinkedIn"
+                  className="hover:text-[#ffda08] transition-colors duration-200"
+                >
+                  <FaLinkedinIn />
+                </a>
+                <a
+                  href="https://www.instagram.com/taskforceinteriors17/?hl=en"
+                  aria-label="Instagram"
+                  className="hover:text-[#ffda08] transition-colors duration-200"
+                >
+                  <FaInstagram />
+                </a>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       )}

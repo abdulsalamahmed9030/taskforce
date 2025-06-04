@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -100,7 +102,40 @@ export default function MobileNav() {
           <p>Phone: 040-23240629 / 040-66669067</p>
           <p>Email: info@taskforceinteriors.com</p>
         </div>
+        <div className="mt-8 w-full px-16">
+                      <div className="flex flex-row justify-between text-white text-2xl">
+                        <a
+                          href="#"
+                          aria-label="Facebook"
+                          className="hover:text-[#ffda08] transition-colors duration-200"
+                        >
+                          <FaFacebookF />
+                        </a>
+                        <a
+                          href="#"
+                          aria-label="Twitter/X"
+                          className="hover:text-[#ffda08] transition-colors duration-200"
+                        >
+                          <FaXTwitter />
+                        </a>
+                        <a
+                          href="https://www.linkedin.com/company/task-force-interiors/"
+                          aria-label="LinkedIn"
+                          className="hover:text-[#ffda08] transition-colors duration-200"
+                        >
+                          <FaLinkedinIn />
+                        </a>
+                        <a
+                          href="https://www.instagram.com/taskforceinteriors17/?hl=en"
+                          aria-label="Instagram"
+                          className="hover:text-[#ffda08] transition-colors duration-200"
+                        >
+                          <FaInstagram />
+                        </a>
+                      </div>
+                    </div>
       </div>
+      
     </>
   );
 }
