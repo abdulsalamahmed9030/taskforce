@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { FaArrowUp } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from "react";
+import { FaArrowUp } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ScrollUpArrow() {
   const [show, setShow] = useState(false);
@@ -12,8 +12,8 @@ export default function ScrollUpArrow() {
       setShow(window.scrollY > 100);
     };
 
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -24,7 +24,7 @@ export default function ScrollUpArrow() {
           initial={{ y: -1100, opacity: 1 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
-          transition={{ type: 'spring', stiffness: 180, damping: 60 }}
+          transition={{ type: "spring", stiffness: 180, damping: 60 }}
           className="fixed bottom-6 right-6 w-[100px] h-[100px] z-50 pointer-events-none hidden sm:block"
         >
           {/* Ripple Animation */}
@@ -32,13 +32,13 @@ export default function ScrollUpArrow() {
             className="absolute w-full h-full bg-[#ffda08] rounded-full"
             animate={{
               scale: [0.4, 1.5],
-              opacity: [0.6, 0],
+              opacity: [0.5, 0],
             }}
             transition={{
               duration: 2,
               repeat: Infinity,
-              repeatType: 'loop',
-              ease: [0.4, 0, 0.2, 1],
+              repeatType: "loop",
+              ease: "easeInOut", // 👈 smoother easing
             }}
           />
 
@@ -54,7 +54,7 @@ export default function ScrollUpArrow() {
               transition={{
                 duration: 2,
                 repeat: Infinity,
-                ease: 'easeInOut',
+                ease: "easeInOut",
               }}
             >
               <FaArrowUp size={20} className="text-white" />
