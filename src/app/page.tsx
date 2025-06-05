@@ -23,7 +23,7 @@ const page = () => {
     <TeamSection />
     <StatisticsSection />
     <MapSection />
-    <Footer />
+    <Footer /> 
     <Copyright />
     <BackToTop />
     </>

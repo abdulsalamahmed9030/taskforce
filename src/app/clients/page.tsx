@@ -4,6 +4,7 @@ import TaskForceOverview from "../components/TaskForceOverview";
 import Clients from "../components/Clients";
 import Footer from "../components/Footer";
 import Copyright from "../components/Copyright";
+import BackToTop from "../components/BackToTop";
 
 const page = () => {
   return (
@@ -16,6 +17,7 @@ const page = () => {
       <Clients />
       <Footer />
       <Copyright />
+      <BackToTop />
     </>
   );
 };

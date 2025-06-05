@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Oswald } from "next/font/google";
+import { Geist, Geist_Mono, Oswald, Open_Sans } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,6 +14,11 @@ const geistMono = Geist_Mono({
 
 const oswald = Oswald({
   variable: "--font-oswald",
+  subsets: ["latin"],
+});
+
+const openSans = Open_Sans({
+  variable: "--font-open-sans", // ✅ Open Sans setup
   subsets: ["latin"],
 });
 
@@ -40,7 +45,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} ${openSans.variable} font-openSans antialiased`} // ✅ Sets Open Sans as default font
       >
         {children}
       </body>

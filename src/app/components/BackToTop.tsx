@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function ScrollUpArrow() {
+export default function BackToTop() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -16,6 +16,10 @@ export default function ScrollUpArrow() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <AnimatePresence>
       {show && (
@@ -25,11 +29,11 @@ export default function ScrollUpArrow() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 180, damping: 60 }}
-          className="fixed bottom-6 right-6 w-[100px] h-[100px] z-50 pointer-events-none hidden sm:block"
+          className="fixed bottom-6 right-6 w-[100px] h-[100px] z-50 hidden sm:block"
         >
           {/* Ripple Animation */}
           <motion.div
-            className="absolute w-full h-full bg-[#ffda08] rounded-full"
+            className="absolute w-full h-full bg-[#ffda08] rounded-full pointer-events-none"
             animate={{
               scale: [0.4, 1.5],
               opacity: [0.5, 0],
@@ -38,13 +42,14 @@ export default function ScrollUpArrow() {
               duration: 2,
               repeat: Infinity,
               repeatType: "loop",
-              ease: "easeInOut", // 👈 smoother easing
+              ease: "easeInOut",
             }}
           />
 
-          {/* Inner Circle with Arrow */}
+          {/* Clickable Button */}
           <motion.div
-            className="absolute top-5 left-5 w-[60px] h-[60px] bg-[#ffda08] rounded-full flex items-center justify-center z-10 shadow-md"
+            onClick={scrollToTop}
+            className="absolute top-5 left-5 w-[60px] h-[60px] bg-[#ffda08] rounded-full flex items-center justify-center z-10 shadow-md cursor-pointer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >

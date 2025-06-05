@@ -49,7 +49,7 @@ export default function TaskForceSection() {
             <h2 className="font-oswald text-3xl font-bold text-[#ffda08] uppercase leading-normal">
               WORKING BACKGROUND
             </h2>
-            <p className="text-xl mt-3 text-white leading-relaxed">
+            <p className="text-xl mt-3 text-white leading-relaxed font-openSans">
               Our company boasts a strong history of delivering successful
               projects, spanning upscale office and showroom interior
               decoration, software centers, BPOs, and data centers. We excel in

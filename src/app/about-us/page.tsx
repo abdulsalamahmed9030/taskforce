@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import AboutTwo from "../components/about/AboutTwo";
 import TaskForceOverview from "../components/TaskForceOverview";
 import Copyright from "../components/Copyright";
+import BackToTop from "../components/BackToTop";
 
 const page = () => {
   return (
@@ -20,6 +21,7 @@ const page = () => {
       <TeamSection />
       <Footer />
       <Copyright />
+      <BackToTop />
     </>
   );
 };

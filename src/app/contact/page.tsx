@@ -5,6 +5,7 @@ import ContactForm from '../components/ContactForm'
 import Footer from '../components/Footer'
 import MapOnly from '../components/MapOnly'
 import Copyright from '../components/Copyright'
+import BackToTop from '../components/BackToTop'
 
 const page = () => {
   return (
@@ -15,6 +16,7 @@ const page = () => {
        <ContactForm />
        <Footer />
        <Copyright />
+       <BackToTop />
     </>
   )
 }

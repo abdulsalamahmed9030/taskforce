@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import AboutText from '../components/about/AboutText'
 import Gallery from '../components/Gallery'
 import Copyright from '../components/Copyright'
+import BackToTop from '../components/BackToTop'
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
       <Gallery />
       <Footer />
       <Copyright />
+      <BackToTop/>
     </>
   )
 }
