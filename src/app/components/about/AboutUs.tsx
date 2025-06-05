@@ -84,13 +84,13 @@ export default function AboutUs() {
 
           {/* Signature */}
           <div className="flex items-center gap-4 pt-6">
-            <Image
+            {/* <Image
               src="/syed-adil.png"
               alt="Syed Adil"
               width={60}
               height={60}
               className="rounded-full border-2 border-white"
-            />
+            /> */}
             <div>
               <p className="font-bold">Syed Adil</p>
               <p className="text-sm text-gray-400">Design Coordinator</p>
