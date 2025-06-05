@@ -53,7 +53,7 @@ export default function DesktopNav() {
                 href={item.href}
                 className={cn(
                   "transition-colors duration-200 hover:text-[#ffda08] cursor-pointer flex items-center space-x-1",
-                  item.label === "Home" && "text-[#ffda08]"
+                  item.label === "Home" && "text-[#ffffff]"
                 )}
               >
                 <span>{formatLabel(item.label)}</span>
@@ -99,7 +99,7 @@ export default function DesktopNav() {
               href={item.href}
               className={cn(
                 "relative font-oswald transition-all duration-300 hover:text-transparent bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-300 bg-clip-text",
-                item.label === "Home" && "text-yellow-300"
+                item.label === "Home" && "text-white"
               )}
             >
               {formatLabel(item.label)}
