@@ -39,7 +39,7 @@ export default function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#ffda08] text-black flex items-center justify-center"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#ffda08] text-black flex items-center justify-center cursor-pointer"
               aria-label="Close quote popup"
             >
               <X size={20} />
@@ -90,7 +90,7 @@ export default function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
               />
               <button
                 type="submit"
-                className="bg-[#ffda08] text-white font-bold w-full py-3 rounded text-xl"
+                className="bg-[#ffda08] text-white font-bold w-full py-3 rounded text-xl cursor-pointer"
               >
                 Send Message
               </button>

@@ -21,13 +21,13 @@ export default function Header() {
 
           {/* Yellow Button (hidden on mobile) */}
           <div className="bg-[#ffda08] h-full w-20 hidden md:flex items-center justify-center">
-            <button
-              className="text-white font-bold"
-              onClick={() => setShowQuote(true)}
-              aria-label="Open quote popup"
-            >
-              <Menu size={28} /> {/* Hamburger icon */}
-            </button>
+           <button
+  className="text-white font-bold cursor-pointer"
+  onClick={() => setShowQuote(true)}
+  aria-label="Open quote popup"
+>
+  <Menu size={28} /> {/* Hamburger icon */}
+</button>
           </div>
           {/* Main content */}
           <div className="flex w-full items-center justify-between px-4 md:px-8 z-10">
