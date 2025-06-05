@@ -67,13 +67,17 @@ export default function DesktopNav() {
                   strokeWidth={2}
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </Link>
 
               {dropdownOpen && (
                 <div
-                  className="absolute left-0 top-full mt-0 w-40 bg-white shadow-lg rounded-md py-2 z-[9999]"
+                  className="absolute left-0 top-full mt-0 w-40 bg-black shadow-lg rounded-md py-2 z-[9999]"
                   onMouseEnter={() => setDropdownOpen(true)}
                   onMouseLeave={() => setDropdownOpen(false)}
                 >
@@ -81,7 +85,7 @@ export default function DesktopNav() {
                     <Link
                       key={j}
                       href={dropItem.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-300 hover:text-black font-oswald"
+                      className="block px-4 py-2 text-sm text-white hover:bg-yellow-300 hover:text-white font-oswald"
                     >
                       {formatLabel(dropItem.label)}
                     </Link>
@@ -94,9 +98,8 @@ export default function DesktopNav() {
               key={i}
               href={item.href}
               className={cn(
-                "transition-colors duration-200 hover:text-[#ffda08]",
-                item.label === "Home" && "text-[#ffda08]",
-                "font-oswald"
+                "relative font-oswald transition-all duration-300 hover:text-transparent bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-300 bg-clip-text",
+                item.label === "Home" && "text-yellow-300"
               )}
             >
               {formatLabel(item.label)}

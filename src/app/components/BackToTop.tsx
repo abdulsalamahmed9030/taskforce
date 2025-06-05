@@ -1,52 +1,67 @@
-"use client";
-import { useEffect, useState } from "react";
-import { ChevronUp } from "lucide-react";
+'use client';
 
-export default function BackToTop() {
-  const [visible, setVisible] = useState(false);
-  const [topPosition, setTopPosition] = useState("-60px"); // start hidden above viewport
+import { useEffect, useState } from 'react';
+import { FaArrowUp } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+
+export default function ScrollUpArrow() {
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    function handleScroll() {
-      if (window.scrollY > 0) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    }
+    const onScroll = () => {
+      setShow(window.scrollY > 100);
+    };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    if (visible) {
-      // Slide from top (-60px) down to near bottom (calc viewport height minus button height + margin)
-      setTopPosition("calc(100vh - 88px)"); // 88px = 48px height + 40px margin
-    } else {
-      // Slide offscreen below viewport (120vh)
-      setTopPosition("120vh");
-    }
-  }, [visible]);
-
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
   return (
-    <button
-      onClick={scrollToTop}
-      aria-label="Back to top"
-      style={{
-        top: topPosition,
-        right: "1.5rem",
-        width: "48px",
-        height: "48px",
-        transition: "top 0.5s ease",
-      }}
-      className="fixed bg-[#ffda08] text-black rounded-full p-4 shadow-lg z-50 flex items-center justify-center"
-    >
-      <ChevronUp size={24} strokeWidth={3} />
-    </button>
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          key="scrollButton"
+          initial={{ y: -1100, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -100, opacity: 0 }}
+          transition={{ type: 'spring', stiffness: 180, damping: 60 }}
+          className="fixed bottom-6 right-6 w-[100px] h-[100px] z-50 pointer-events-none hidden sm:block"
+        >
+          {/* Ripple Animation */}
+          <motion.div
+            className="absolute w-full h-full bg-[#ffda08] rounded-full"
+            animate={{
+              scale: [0.4, 1.5],
+              opacity: [0.6, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: 'loop',
+              ease: [0.4, 0, 0.2, 1],
+            }}
+          />
+
+          {/* Inner Circle with Arrow */}
+          <motion.div
+            className="absolute top-5 left-5 w-[60px] h-[60px] bg-[#ffda08] rounded-full flex items-center justify-center z-10 shadow-md"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            >
+              <FaArrowUp size={20} className="text-white" />
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
