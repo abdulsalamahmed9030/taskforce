@@ -36,7 +36,7 @@ export default function BackToTop() {
             className="absolute w-full h-full bg-[#ffda08] rounded-full pointer-events-none"
             animate={{
               scale: [0.4, 1.5],
-              opacity: [0.5, 0],
+              opacity: [0.9, 0],
             }}
             transition={{
               duration: 2,

@@ -13,7 +13,7 @@ const slides = [
     subtitle: "TASK FORCE INTERIORS",
     description:
       "its an organization overseen by individuals with extensive experience in civil engineering, interior design, and the management of turnkey projects.",
-    image: "/banner-4.png",
+    image: "/555.png",
   },
   {
     id: 2,

@@ -22,7 +22,7 @@ export default function HeroImage({ image, subtitle }: HeroImageProps) {
           2xl:w-[580px] 2xl:h-[500px]
         ">
           <Image
-            src="/HeroBg.png"
+            src="/555.png"
             alt="Background Shape"
             fill
             className="object-contain"
