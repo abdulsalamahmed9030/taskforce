@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import PortFolio from '../components/PortFolio'
 import Copyright from '../components/Copyright'
 import BackToTop from '../components/BackToTop'
+import ScrollToTop from '../components/ScrollToTop'
 
 const page = () => {
   return (
@@ -20,6 +21,7 @@ const page = () => {
             <Footer />
             <Copyright />
             <BackToTop/>
+            <ScrollToTop />
     </>
   )
 }

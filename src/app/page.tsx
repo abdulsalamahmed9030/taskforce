@@ -11,6 +11,7 @@ import StatisticsSection from './components/Statistics'
 import MapSection from './components/MapSection'
 import Copyright from './components/Copyright'
 import Preloader from './components/Preloader'
+import ScrollToTop from './components/ScrollToTop'
 const page = () => {
   return (
     <>
@@ -26,6 +27,7 @@ const page = () => {
     <Footer /> 
     <Copyright />
     <BackToTop />
+    <ScrollToTop />
     </>
   )
 }

@@ -6,6 +6,7 @@ import AboutText from '../components/about/AboutText'
 import Gallery from '../components/Gallery'
 import Copyright from '../components/Copyright'
 import BackToTop from '../components/BackToTop'
+import ScrollToTop from '../components/ScrollToTop'
 
 const page = () => {
   return (
@@ -19,6 +20,7 @@ const page = () => {
       <Footer />
       <Copyright />
       <BackToTop/>
+      <ScrollToTop />
     </>
   )
 }
