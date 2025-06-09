@@ -1,3 +1,7 @@
+'use client';
+
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
@@ -16,10 +20,15 @@ const footerLinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <footer className="bg-black text-white py-10 px-6 md:px-20">
-     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-16">
-
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-16">
         {/* Column 1: Logo + Description */}
         <div>
           <Image
@@ -41,7 +50,7 @@ export default function Footer() {
           <h3 className="font-bold uppercase tracking-wide text-xl">
             INTERIOR DESIGN
           </h3>
-          <address className="not-italic text-lg leading-relaxed max-w-xs ">
+          <address className="not-italic text-lg leading-relaxed max-w-xs">
             <p>3-5-823, Ground Floor</p>
             <p>Hyderabad Business Center</p>
             <p>Hyderguda, Hyderabad - 500029</p>
@@ -72,6 +81,7 @@ export default function Footer() {
             </p>
           </address>
         </div>
+
         {/* Column 3: Links */}
         <div>
           <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">
@@ -91,7 +101,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 4: Follow Us */}
         {/* Column 4: Follow Us */}
         <div>
           <h3 className="font-bold uppercase mb-4 tracking-wide text-xl">
