@@ -15,7 +15,7 @@ const MapSection = () => {
               className="object-contain"
             />
           </div>
-          <span className="text-[#ffda08] tracking-widest text-xl md:text-2xl lg:text-3xl">
+          <span className="text-[#ffda08] tracking-widest text-xl md:text-2xl lg:text-3xl font-oswald">
             CONTACT US
           </span>
         </div>

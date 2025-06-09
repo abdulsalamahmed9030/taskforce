@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation"; // ✅ import
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -21,7 +22,6 @@ const navItems = [
   },
 ];
 
-// ✅ Format label: Capitalize each word, except preserve FAQ/CSR
 function formatLabel(label: string) {
   const preserve = ["FAQ", "CSR"];
   if (preserve.includes(label.toUpperCase())) return label.toUpperCase();
@@ -34,6 +34,7 @@ function formatLabel(label: string) {
 }
 
 export default function StickyHeader() {
+  const pathname = usePathname(); // ✅ get current path
   const [show, setShow] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -72,54 +73,78 @@ export default function StickyHeader() {
 
         {/* Desktop Navigation */}
         <nav className="flex space-x-6 text-xl font-bold tracking-wide relative z-[10000] font-oswald">
-          {navItems.map((item, index) =>
-            item.dropdown ? (
-              <div
-                key={index}
-                className="relative"
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
-              >
-                <span className="cursor-pointer hover:text-[#ffda08] flex items-center space-x-1">
-                  <span>{formatLabel(item.label)}</span>
-                  <svg
-                    className={`w-3 h-3 transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180 text-[#ffda08]" : "text-current"
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
+          {navItems.map((item, index) => {
+            const isActive = pathname === item.href;
 
-                {/* Dropdown Items */}
-                {dropdownOpen && (
-                  <div className="absolute left-0 top-full w-40 bg-white text-black shadow-md rounded-md py-2 z-[9999]">
-                    {item.dropdown.map((dropItem, dropIndex) => (
-                      <Link
-                        key={dropIndex}
-                        href={dropItem.href}
-                        className="block px-4 py-2 text-sm hover:bg-yellow-300 hover:text-black font-oswald"
-                      >
-                        {formatLabel(dropItem.label)}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
+            if (item.dropdown) {
+              // Check if any dropdown item is active
+              const isDropdownActive = item.dropdown.some(
+                (dropItem) => pathname === dropItem.href
+              );
+
+              return (
+                <div
+                  key={index}
+                  className="relative"
+                  onMouseEnter={() => setDropdownOpen(true)}
+                  onMouseLeave={() => setDropdownOpen(false)}
+                >
+                  <span
+                    className={`cursor-pointer flex items-center space-x-1 ${
+                      isDropdownActive ? "text-[#ffda08]" : "hover:text-[#ffda08]"
+                    }`}
+                  >
+                    <span>{formatLabel(item.label)}</span>
+                    <svg
+                      className={`w-3 h-3 transition-transform duration-200 ${
+                        dropdownOpen ? "rotate-180 text-[#ffda08]" : "text-current"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+
+                  {dropdownOpen && (
+                    <div className="absolute left-0 top-full w-40 bg-white text-black shadow-md rounded-md py-2 z-[9999]">
+                      {item.dropdown.map((dropItem, dropIndex) => {
+                        const isDropActive = pathname === dropItem.href;
+
+                        return (
+                          <Link
+                            key={dropIndex}
+                            href={dropItem.href}
+                            className={`block px-4 py-2 text-sm font-oswald ${
+                              isDropActive
+                                ? "bg-yellow-300 text-black"
+                                : "hover:bg-yellow-300 hover:text-black"
+                            }`}
+                          >
+                            {formatLabel(dropItem.label)}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            return (
               <Link
                 key={index}
                 href={item.href}
-                className="hover:text-[#ffda08] transition-colors duration-200 font-oswald"
+                className={`transition-colors duration-200 font-oswald ${
+                  isActive ? "text-[#ffda08]" : "hover:text-[#ffda08]"
+                }`}
               >
                 {formatLabel(item.label)}
               </Link>
-            )
-          )}
+            );
+          })}
         </nav>
       </div>
     </div>

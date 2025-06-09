@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { usePathname } from "next/navigation"; // ✅ Import
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -22,7 +23,6 @@ function cn(...classes: (string | undefined | false | null)[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-// ✅ Capitalize first letter of each word except for special cases
 function formatLabel(label: string) {
   const upperCasePreserve = ["FAQ", "CSR"];
   if (upperCasePreserve.includes(label.toUpperCase())) return label.toUpperCase();
@@ -36,6 +36,7 @@ function formatLabel(label: string) {
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // ✅ Get current path
 
   return (
     <>
@@ -66,7 +67,7 @@ export default function MobileNav() {
           "w-[80vw] max-w-sm p-6 flex flex-col space-y-6"
         )}
       >
-        {/* Logo at the top */}
+        {/* Logo */}
         <div className="mb-4">
           <Image
             src="/logo.png"
@@ -77,21 +78,25 @@ export default function MobileNav() {
           />
         </div>
 
-        {/* Navigation Links */}
+        {/* Nav Links */}
         <div className="flex flex-col space-y-4 text-sm font-bold">
-          {navItems.map((item, i) => (
-            <Link
-              key={i}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className={cn(
-                "transition-colors duration-200 hover:text-[#ffda08]",
-                item.label === "Home" && "text-[#ffda08]"
-              )}
-            >
-              {formatLabel(item.label)}
-            </Link>
-          ))}
+          {navItems.map((item, i) => {
+            const isActive = pathname === item.href;
+
+            return (
+              <Link
+                key={i}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "transition-colors duration-200",
+                  isActive ? "text-[#ffda08]" : "hover:text-[#ffda08]"
+                )}
+              >
+                {formatLabel(item.label)}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Contact Info */}
@@ -102,40 +107,33 @@ export default function MobileNav() {
           <p>Phone: 040-23240629 / 040-66669067</p>
           <p>Email: info@taskforceinteriors.com</p>
         </div>
+
+        {/* Social Icons */}
         <div className="mt-8 w-full px-16">
-                      <div className="flex flex-row justify-between text-white text-2xl">
-                        <a
-                          href="#"
-                          aria-label="Facebook"
-                          className="hover:text-[#ffda08] transition-colors duration-200"
-                        >
-                          <FaFacebookF />
-                        </a>
-                        <a
-                          href="#"
-                          aria-label="Twitter/X"
-                          className="hover:text-[#ffda08] transition-colors duration-200"
-                        >
-                          <FaXTwitter />
-                        </a>
-                        <a
-                          href="https://www.linkedin.com/company/task-force-interiors/"
-                          aria-label="LinkedIn"
-                          className="hover:text-[#ffda08] transition-colors duration-200"
-                        >
-                          <FaLinkedinIn />
-                        </a>
-                        <a
-                          href="https://www.instagram.com/taskforceinteriors17/?hl=en"
-                          aria-label="Instagram"
-                          className="hover:text-[#ffda08] transition-colors duration-200"
-                        >
-                          <FaInstagram />
-                        </a>
-                      </div>
-                    </div>
+          <div className="flex flex-row justify-between text-white text-2xl">
+            <a href="#" aria-label="Facebook" className="hover:text-[#ffda08]">
+              <FaFacebookF />
+            </a>
+            <a href="#" aria-label="Twitter/X" className="hover:text-[#ffda08]">
+              <FaXTwitter />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/task-force-interiors/"
+              aria-label="LinkedIn"
+              className="hover:text-[#ffda08]"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href="https://www.instagram.com/taskforceinteriors17/?hl=en"
+              aria-label="Instagram"
+              className="hover:text-[#ffda08]"
+            >
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
       </div>
-      
     </>
   );
 }

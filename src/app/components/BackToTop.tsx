@@ -29,7 +29,7 @@ export default function BackToTop() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 180, damping: 60 }}
-          className="fixed bottom-6 right-6 w-[100px] h-[100px] z-50 hidden sm:block"
+          className="fixed bottom-6 right-6 w-[100px] h-[100px] z-50 hidden [@media(min-width:400px)]:block"
         >
           {/* Ripple Animation */}
           <motion.div
