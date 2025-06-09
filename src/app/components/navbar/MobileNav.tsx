@@ -40,16 +40,16 @@ export default function MobileNav() {
 
   return (
     <>
-      {/* Toggle Button */}
-      <div className="md:hidden z-30 fixed top-4 right-4">
-        <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? (
-            <X className="text-white" size={28} />
-          ) : (
-            <Menu className="text-white" size={28} />
-          )}
-        </button>
-      </div>
+     {/* Toggle Button */}
+<div className="md:hidden z-30 fixed top-4 right-4">
+  <button onClick={() => setIsOpen(!isOpen)}>
+    {isOpen ? (
+      <X className="text-[#ffda08]" size={28} />
+    ) : (
+      <Menu className="text-[#ffda08]" size={28} />
+    )}
+  </button>
+</div>
 
       {/* Overlay */}
       {isOpen && (

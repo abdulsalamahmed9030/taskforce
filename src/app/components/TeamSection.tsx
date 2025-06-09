@@ -32,11 +32,10 @@ export default function TeamSection() {
           OUR PROFESSIONALS
         </p>
         <h2 className="font-oswald text-[40px] md:text-[60px] font-semibold leading-[70px] uppercase mt-2 text-gray-900 dark:text-black">
-  <span>EXPERTS AND OUR</span>
-  <br />
-  <span className="text-[#ffda08]">TEAM MEMBERS</span>
-</h2>
-
+          <span>EXPERTS AND OUR</span>
+          <br />
+          <span className="text-[#ffda08]">TEAM MEMBERS</span>
+        </h2>
       </div>
 
       {/* Cards */}
@@ -51,19 +50,30 @@ export default function TeamSection() {
               onMouseLeave={() => setHovered(null)}
               className="w-full max-w-sm relative transition-all duration-500"
             >
-              {/* Clipped Background */}
+              {/* Clipped Background with sliding overlay */}
               <div className="relative h-40 overflow-hidden">
+                {/* Static Background */}
                 <div
-                  className={`absolute inset-0 transition-colors duration-500 z-0 ${
-                    isHovered ? "bg-black" : "bg-[#f9f4f1]"
+                  className="absolute inset-0 bg-[#f9f4f1] z-0"
+                  style={{
+                    clipPath:
+                      "polygon(0 0, 100% 30%, 100% 100%, 0% 100%)",
+                  }}
+                />
+
+                {/* Sliding Black Overlay */}
+                <div
+                  className={`absolute inset-0 z-10 bg-black transition-transform duration-500 ease-in-out ${
+                    isHovered ? "translate-x-0" : "translate-x-full"
                   }`}
                   style={{
-                    clipPath: "polygon(0 0, 100% 30%, 100% 100%, 0% 100%)",
+                    clipPath:
+                      "polygon(0 0, 100% 30%, 100% 100%, 0% 100%)",
                   }}
-                ></div>
+                />
 
-                {/* Text content with dynamic color */}
-                <div className="absolute bottom-4 left-4 z-10 transition-colors duration-300">
+                {/* Text Content */}
+                <div className="absolute bottom-4 left-4 z-20 transition-colors duration-300">
                   <p
                     className={`text-sm font-semibold mb-1 ${
                       isHovered ? "text-white" : "text-[#ffda08]"
@@ -72,12 +82,12 @@ export default function TeamSection() {
                     {member.title}
                   </p>
                   <h3
-  className={`font-oswald text-[24px] font-normal leading-[34px] ${
-    isHovered ? "text-white" : "text-black"
-  }`}
->
-  {member.name}
-</h3>
+                    className={`font-oswald text-[24px] font-normal leading-[34px] ${
+                      isHovered ? "text-white" : "text-black"
+                    }`}
+                  >
+                    {member.name}
+                  </h3>
                 </div>
               </div>
 
