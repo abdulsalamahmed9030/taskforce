@@ -47,3 +47,27 @@ body {
 .font-openSans {
   font-family: 'Open Sans', sans-serif;
 }
+.leftaboutimg{
+  @media (max-width: 768px) {
+    width:full !important;
+    height: 400px !important;
+  }
+  @media (min-width: 768px) and (max-width: 934px) {
+    width:300px !important;
+    height: 500px !important;
+  }
+  @media (min-width: 935px) and (max-width: 1349px) {
+    width:400px !important;
+    height: 500px !important;
+  }
+   @media (min-width: 1350px) {
+    width:600px !important;
+    height: 500px !important;
+  }
+  @media (min-width: 1600px) {
+    margin-left: 80px;
+  }
+  @media (min-width: 1700px) {
+    margin-left: 130px;
+  }
+}

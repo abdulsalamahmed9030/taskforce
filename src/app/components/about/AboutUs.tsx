@@ -32,7 +32,7 @@ export default function AboutUs() {
         {/* Main Feature Image Only */}
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="rounded-xl overflow-hidden shadow-lg w-full md:w-[600px] h-[400px] md:h-[500px]"
+          className="rounded-xl overflow-hidden shadow-lg w-full leftaboutimg"
         >
           <div className="relative w-full h-full">
             <Image
